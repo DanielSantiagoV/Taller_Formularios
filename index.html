@@ -28,4 +28,75 @@
                 <p><strong>⏰ Hora de inicio:</strong> 8:00 AM</p>
                 <p>Un evento para fomentar el deporte y la sana competencia en nuestra ciudad. ¡Te esperamos!</p>
             </section>
-            
+            <section id="inscripcion">
+                <h2>📝 Formulario de Inscripción Oficial</h2>
+                <form action="#" method="post">
+                    <fieldset>
+                        <legend>👤 Datos Personales del Atleta</legend>
+                        <div>
+                            <label for="nombreCompleto">🏷️ Nombre Completo:</label>
+                            <input type="text" id="nombreCompleto" name="nombreCompleto" placeholder="Escribe tu nombre completo" required>
+                        </div>
+                        <div>
+                            <label for="documento">🆔 Documento de Identidad:</label>
+                            <input type="number" id="documento" name="documento" placeholder="Número de documento sin puntos" required min="100000">
+                        </div>
+                        <div>
+                            <label for="fechaNacimiento">🎂 Fecha de Nacimiento:</label>
+                            <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+                        </div>
+                        <div class="radio-group">
+                            <label>⚧️ Género:</label>
+                            <input type="radio" id="generoM" name="genero" value="masculino" required>
+                            <label for="generoM">Masculino</label>
+                            <input type="radio" id="generoF" name="genero" value="femenino">
+                            <label for="generoF">Femenino</label>
+                            <input type="radio" id="generoO" name="genero" value="otro">
+                            <label for="generoO">Otro</label>
+                        </div>
+                        <div>
+                            <label for="email">📧 Correo Electrónico:</label>
+                            <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com">
+                        </div>
+                        <div>
+                            <label for="telefono">📞 Teléfono de Contacto:</label>
+                            <input type="tel" id="telefono" name="telefono" required pattern="[0-9]{7,10}" placeholder="Ej: 3001234567 (7 a 10 dígitos)">
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>🏅 Datos para la Competencia</legend>
+                        <div>
+                            <label for="categoria">🏁 Categoría en la que participas:</label>
+                            <select id="categoria" name="categoria" required>
+                                <option value="">-- Selecciona una categoría --</option>
+                                <option value="juvenil">Juvenil (Hasta 18 años)</option>
+                                <option value="mayores">Mayores (19-39 años)</option>
+                                <option value="master">Máster (40 años en adelante)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="tallaCamiseta">👕 Talla de Camiseta:</label>
+                            <select id="tallaCamiseta" name="tallaCamiseta" required>
+                                <option value="">-- Selecciona tu talla --</option>
+                                <option value="s">S</option>
+                                <option value="m">M</option>
+                                <option value="l">L</option>
+                                <option value="xl">XL</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="observaciones">🗒️ Observaciones (opcional):</label>
+                            <textarea id="observaciones" name="observaciones" rows="4" placeholder="¿Alguna alergia, condición médica relevante o comentario?"></textarea>
+                        </div>
+                    </fieldset>
+
+                    <div>
+                         <input type="checkbox" id="terminos" name="terminos" required>
+                         <label for="terminos">He leído y acepto los <a href="#" target="_blank">términos y condiciones</a> y la <a href="#" target="_blank">política de privacidad</a> del evento.</label>
+                    </div>
+
+                    <button type="submit">✅ ¡Inscribirme Ahora!</button>
+                </form>
+            </section>
+        </main>
