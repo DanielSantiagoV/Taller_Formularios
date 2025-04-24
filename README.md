@@ -103,9 +103,28 @@ O haz doble clic sobre el archivo en tu explorador de archivos.
     *   Utiliza el campo `date` para ver el selector de fecha.
     *   Llena el formulario correctamente y envíalo (notarás que la página se recarga o no hace nada visiblemente, ya que `action="#"` y no hay backend).
 
-## 🎥 Archivos de Soporte (Guion/Explicación)
-- **`guion_video.txt`**: Contiene una guía paso a paso para grabar el video de presentación del proyecto, explicando la estructura, el formulario, las validaciones y la UX desde la perspectiva HTML.
-- **`explicacion_html.txt`**: Ofrece una descripción detallada de cada etiqueta HTML y atributo utilizado en `index.html`, ideal para entender a fondo el código.
+## 📚 Documentación de Soporte
+
+Para una comprensión más profunda del proyecto, consulta:
+
+- **`explicacion_html.txt`**: Un desglose exhaustivo de cada etiqueta y atributo HTML utilizado en `index.html`.
+
+
+### ▶️ Uso e Interacción
+
+1.  Una vez abierto `index.html`, observa la **estructura semántica** de la página.
+2.  Navega usando los enlaces "Detalles del Evento" e "Inscripción".
+3.  Interactúa con el **formulario**: Llénalo, prueba las validaciones (dejando campos vacíos, usando formatos incorrectos) y observa cómo responde el navegador gracias a los atributos HTML.
+
+---
+
+## 💡 Conceptos HTML Clave Demostrados
+
+### ✅ Validaciones Nativas
+
+- Se aprovechan las **validaciones integradas del navegador** para una experiencia de usuario básica sin JavaScript.
+- Destacan: `required`, `type` (email, number, date, tel), `pattern` y `min`.
+
 
 ## 📱 Compatibilidad
 
@@ -132,17 +151,24 @@ O haz doble clic sobre el archivo en tu explorador de archivos.
 - `fieldset` y `legend` agrupan controles relacionados, mejorando la comprensión.
 
 ## ❓ Preguntas Frecuentes
+**P: 💾 ¿Por qué no se guardan los datos al enviar el formulario?**
 
-### 💾 ¿Por qué no se guardan los datos al enviar el formulario?
-El HTML solo define la *estructura* del formulario. Para guardar datos se necesita un *backend* (un lenguaje del lado del servidor como PHP, Python, Node.js, etc.) que reciba los datos enviados por el formulario (definido en el atributo `action`) y los procese (guardándolos en una base de datos, enviando un email, etc.). Este proyecto se enfoca únicamente en la parte HTML (frontend).
+> **R:** HTML solo define la estructura. Para guardar datos se necesita un *backend* (código en el servidor) y configurar el atributo `action` del formulario para que apunte a él. Este taller se centra solo en el HTML.
 
-### 🤔 ¿Qué significa `action="#"` en el `<form>`?
-Es un marcador de posición común. Indica que el formulario, al enviarse, debe apuntar a la misma página actual. Como no hay un script esperando para procesar los datos en esta página, usualmente solo causa que la página se recargue.
+**P: 🤔 ¿Qué hace `action="#"` en el `<form>`?**
 
-### 🎨 ¿Se puede mejorar la apariencia?
-¡Definitivamente! La apariencia visual se controla con CSS (Cascading Style Sheets). Este proyecto intencionalmente no incluye CSS para enfocarse en la estructura HTML pura. Un siguiente paso natural sería crear un archivo `.css` y enlazarlo en el `<head>` para darle estilos, colores, márgenes, etc.
+> **R:** Es un marcador de posición que le dice al navegador que envíe los datos a la misma página. Sin un backend, esto usualmente solo recarga la página.
+
+**P: 🎨 ¿Cómo puedo mejorar la apariencia visual?**
+
+> **R:** ¡Con CSS! (Cascading Style Sheets). Se podría crear un archivo `.css`, enlazarlo en el `<head>` del HTML, y definir reglas para colores, fuentes, márgenes, etc. Este proyecto omite CSS intencionalmente para enfocarse en HTML.
 
 ## 🏆 Reconocimientos
+
+- **🎯 Logro:** Cumplimiento de los requisitos del Taller de Formularios HTML.
+- **🙏 Agradecimientos:** A la entidad organizadora y a los recursos de la comunidad web.
+
+---
 
 ### 🎯 Logro del Proyecto
 - ✅ Cumplimiento de todos los requisitos del Taller de Formularios HTML especificados.
@@ -173,4 +199,8 @@ Este Proyecto fue desarrollado por:
 
 --- 
 
-- 🔥 **¡Github: https://github.com/DanielSantiagoV !🚀**
+ ### 🔗 **Enlaces**
+
+- 🔥 **GitHub:** [https://github.com/DanielSantiagoV](https://github.com/DanielSantiagoV)
+
+---
