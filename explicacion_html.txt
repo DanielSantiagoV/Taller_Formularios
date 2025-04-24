@@ -1,0 +1,81 @@
+Explicación Detallada del Código HTML (index.html)
+
+Este documento detalla el propósito y uso de las etiquetas y atributos HTML presentes en el archivo `index.html` creado para el formulario de inscripción de la competencia de atletismo.
+
+**1. Estructura General del Documento**
+
+*   `<!DOCTYPE html>`: Declaración del tipo de documento. Indica al navegador que se trata de un documento HTML5, asegurando que se interprete con los estándares más recientes.
+*   `<html lang="es">...</html>`: Es el elemento raíz de todo documento HTML. El atributo `lang="es"` especifica que el idioma principal del contenido es español, lo cual es útil para motores de búsqueda y tecnologías de asistencia.
+*   `<head>...</head>`: Contiene metadatos (información sobre el HTML) que no son visibles directamente en la página, pero son importantes para el navegador y los buscadores.
+    *   `<meta charset="UTF-8">`: Define la codificación de caracteres utilizada. UTF-8 es estándar y permite mostrar correctamente una amplia gama de caracteres, incluyendo tildes y emojis.
+    *   `<meta name="viewport" content="width=device-width, initial-scale=1.0">`: Esencial para el diseño responsivo (adaptable a diferentes tamaños de pantalla). `width=device-width` ajusta el ancho de la página al ancho del dispositivo, y `initial-scale=1.0` establece el nivel de zoom inicial.
+    *   `<title>...</title>`: Define el título que aparece en la pestaña o barra de título del navegador. También es importante para el SEO.
+    *   `<!-- Bloque de estilos CSS eliminado -->`: Esto es un comentario HTML. Los comentarios son ignorados por el navegador y sirven para dejar notas para los desarrolladores.
+*   `<body>...</body>`: Contiene todo el contenido visible de la página web (textos, imágenes, formularios, etc.).
+
+**2. Estructura Semántica del Contenido (Dentro de `<body>`)**
+
+HTML5 introdujo etiquetas semánticas que describen el propósito de su contenido, mejorando la estructura, accesibilidad y SEO.
+
+*   `<div class="container">...</div>`: Una división genérica. Aunque no es semántica por sí misma, se usa comúnmente para agrupar secciones grandes de contenido, a menudo con fines de estilización (mediante el atributo `class`) si se usara CSS.
+*   `<header>...</header>`: Representa la cabecera de la página o de una sección. Usualmente contiene títulos, logos, información introductoria.
+    *   `<h1>...</h1>`: El encabezado principal de la página. Debe haber solo uno por página idealmente. Los números (h1 a h6) indican jerarquía, no solo tamaño.
+    *   `<p>...</p>`: Define un párrafo de texto.
+*   `<nav>...</nav>`: Contiene enlaces de navegación principales (menús, enlaces a secciones, etc.).
+    *   `<a href="...">...</a>`: Define un hipervínculo (enlace).
+        *   `href="#evento"` / `href="#inscripcion"`: El atributo `href` especifica la URL de destino. Cuando empieza con `#`, es un enlace interno que apunta a un elemento en la *misma* página que tenga un `id` coincidente (ej: `<section id="evento">`).
+*   `<main>...</main>`: Encapsula el contenido principal y único de la página. No debe incluir contenido repetitivo como cabeceras, pies de página o barras laterales comunes a todo el sitio.
+*   `<section id="...">...</section>`: Representa una sección temática dentro del contenido principal.
+    *   `id="evento"` / `id="inscripcion"`: El atributo `id` proporciona un identificador único para el elemento. Se usa para enlazar desde `href` y también puede ser usado por CSS y JavaScript.
+    *   `<h2>...</h2>`: Encabezado de segundo nivel, para subtítulos dentro de una sección.
+    *   `<strong>...</strong>`: Indica que el texto tiene una gran importancia, seriedad o urgencia. Los navegadores típicamente lo muestran en negrita.
+*   `<footer>...</footer>`: Representa el pie de página de la página o de una sección. Usualmente contiene información de copyright, enlaces secundarios, etc.
+    *   `&copy;`: Es una entidad HTML que representa el símbolo de copyright (©).
+
+**3. Formulario de Inscripción (`<form>`)**
+
+*   `<form action="#" method="post">...</form>`: Define un formulario interactivo para que el usuario ingrese datos.
+    *   `action="#" `: Especifica la URL a la que se enviarán los datos del formulario al presionar el botón de envío. `"#"` es un marcador de posición; en una aplicación real, apuntaría a un script en el servidor (ej: `procesar_inscripcion.php`).
+    *   `method="post"`: Define el método HTTP para enviar los datos. `POST` es preferido sobre `GET` para formularios porque los datos no son visibles en la URL y no tiene límite de tamaño.
+*   `<fieldset>...</fieldset>`: Agrupa campos relacionados dentro de un formulario. Visualmente, los navegadores suelen dibujar un borde alrededor. Mejora la organización y accesibilidad.
+*   `<legend>...</legend>`: Proporciona un título o leyenda para el `<fieldset>`. Debe ser el primer hijo del `fieldset`.
+*   `<div>...</div>`: Se usa aquí para agrupar cada par de `label` e `input`, facilitando la estructura y posible estilización futura.
+
+**4. Elementos del Formulario (Campos)**
+
+*   `<label for="...">...</label>`: Etiqueta descriptiva para un campo del formulario.
+    *   `for="nombreCompleto"`: El atributo `for` asocia la etiqueta con un campo específico mediante su `id`. Al hacer clic en la etiqueta, el foco se pone en el campo asociado, mejorando la usabilidad y accesibilidad.
+*   `<input ...>`: Elemento principal para crear controles interactivos. El atributo `type` define qué tipo de control es.
+    *   `type="text"`: Campo de texto de una sola línea.
+    *   `type="number"`: Campo para ingresar números. Puede mostrar controles para incrementar/decrementar.
+    *   `type="date"`: Campo para seleccionar una fecha. Suele mostrar un calendario emergente.
+    *   `type="radio"`: Botón de opción (círculo). Dentro de un grupo con el mismo `name`, solo uno puede estar seleccionado.
+    *   `type="email"`: Campo para direcciones de correo electrónico. El navegador puede validar el formato básico.
+    *   `type="tel"`: Campo para números de teléfono. En móviles, puede mostrar un teclado numérico.
+    *   `type="checkbox"`: Casilla de verificación (cuadrado). Permite seleccionar/deseleccionar una opción.
+    *   **Atributos comunes de `<input>`:**
+        *   `id="..."`: Identificador único para el elemento (usado por `label for`, CSS, JS).
+        *   `name="..."`: Nombre del campo que se envía al servidor junto con su valor. Es crucial para el procesamiento backend. Para radios, debe ser el mismo dentro de un grupo.
+        *   `placeholder="..."`: Texto de ayuda que aparece dentro del campo cuando está vacío. Desaparece al empezar a escribir.
+        *   `required`: Atributo booleano. Si está presente, el campo debe ser llenado antes de enviar el formulario. El navegador mostrará un error si se deja vacío.
+        *   `min="100000"` (en `type="number"`): Especifica el valor numérico mínimo permitido.
+        *   `pattern="[0-9]{7,10}"` (en `type="tel"`): Define una expresión regular que el valor del campo debe cumplir para ser válido (en este caso, entre 7 y 10 dígitos numéricos).
+        *   `value="..."`: Define el valor asociado al input.
+            *   Para `text`, `number`, `date`, etc., es el valor inicial.
+            *   Para `radio` y `checkbox`, es el valor que se envía al servidor *si* esa opción está seleccionada.
+            *   Para `option` dentro de `select`, es el valor enviado.
+*   `<select id="..." name="..." required>...</select>`: Crea una lista desplegable.
+    *   `<option value="...">...</option>`: Define una opción dentro de la lista desplegable. El texto entre las etiquetas es lo que ve el usuario.
+        *   `value=""`: En la primera opción (`-- Selecciona --`), un `value` vacío junto con `required` en el `select` asegura que el usuario deba elegir una opción válida.
+*   `<textarea id="..." name="..." rows="4" placeholder="...">...</textarea>`: Crea un área de texto de múltiples líneas para entradas más largas.
+    *   `rows="4"`: Sugiere al navegador la altura inicial del área de texto en número de líneas.
+*   `<button type="submit">...</button>`: Define un botón clicable.
+    *   `type="submit"`: Es el valor por defecto para un `<button>` dentro de un `<form>`. Al hacer clic, intenta enviar los datos del formulario a la URL especificada en el `action` del `form`.
+
+**5. Atributos Adicionales**
+
+*   `target="_blank"` (en `<a>`): Indica al navegador que abra el enlace en una nueva pestaña o ventana.
+*   `class="container"` / `class="radio-group"`: El atributo `class` asigna uno o más nombres de clase a un elemento. Se usa principalmente para seleccionar elementos con CSS (para aplicar estilos) o JavaScript (para manipularlos), aunque en este proyecto no se está usando CSS externo ni JS.
+
+
+Esperamos que esta explicación detallada te sea de gran utilidad para entender cada parte del archivo `index.html`. 
