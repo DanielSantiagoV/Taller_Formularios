@@ -1,5 +1,9 @@
 # 🏃 Taller Formularios HTML - Inscripción Atletismo Bucaramanga
 
+<p align="center"> 
+  <img src="https://media1.tenor.com/m/imFIc3R5UY8AAAAd/pepe-pepe-wink.gif" width="300"/> 
+</p>
+
 ## 🌟 ¡Bienvenido al Proyecto de Inscripción!
 
 ¡Gracias por revisar este proyecto! 🎉 Este es el resultado del Taller de Formularios HTML, enfocado en crear un formulario de inscripción semántico y funcional para una competencia de atletismo ficticia organizada por la Alcaldía de Bucaramanga.
